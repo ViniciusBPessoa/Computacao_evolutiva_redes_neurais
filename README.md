@@ -1,4 +1,4 @@
-# Projeto de Inteligência Artificial em Jogos Algoritimos evolucionarios treinando redes neurais - BCC Ciências da Computação
+# Projeto de computação evolutiva e redes neurais em Jogos - BCC Ciências da Computação
 Bem-vindo ao repositório dedicado ao projeto de Inteligência Artificial da disciplina de BCC (Ciências da Computação) na qual foram recriados os jogos Flip Bird e Jogo do Dinossauro do Chrome do zero, utilizando a plataforma Unity. Além disso, neste projeto, desenvolvemos nosso próprio modelo de Redes Neurais Profundas sem depender de bibliotecas externas, bem como um Algoritmo Evolucionário Geracional para treinar agentes a jogar cada um dos jogos separadamente.
 
 ## Jogos Recriados
