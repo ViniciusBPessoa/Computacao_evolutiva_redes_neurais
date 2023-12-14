@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3591093239783485837}
   m_Layer: 0
   m_Name: Square (6)
-  m_TagString: cactos
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1022982580114466894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0007826488, y: 1.4323086, z: 0}
+  m_LocalPosition: {x: -0.0007826488, y: 1.55, z: 0}
   m_LocalScale: {x: 0.16940437, y: 0.15555558, z: 0.11111112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4174408735141417809}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: cactos
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,10 +297,10 @@ GameObject:
   - component: {fileID: 410529990664922167}
   - component: {fileID: 4552747713366407233}
   - component: {fileID: 7638040972198305631}
-  - component: {fileID: 7566514674923847788}
+  - component: {fileID: 5033398449561188981}
   m_Layer: 0
   m_Name: pontuador
-  m_TagString: cactos
+  m_TagString: ponto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,8 +314,8 @@ Transform:
   m_GameObject: {fileID: 8896427038982709167}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.67928237, z: 0}
-  m_LocalScale: {x: 0.010565556, y: 0.23978667, z: 1}
+  m_LocalPosition: {x: -0.00065, y: 0.73096, z: 0}
+  m_LocalScale: {x: 0.0117527135, y: 0.34313953, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4126676152887637343}
@@ -417,7 +417,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7566514674923847788
+--- !u!114 &5033398449561188981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8896427038982709167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699689e59fa78a3478ade729b33a9f5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 577ebc0aec0fda4439d768122333665a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3241068694535832377
@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: a60b120e8c907ec47a5534a1ad1d8d63, type: 3}
       propertyPath: m_TagString
-      value: cactos
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: a60b120e8c907ec47a5534a1ad1d8d63, type: 3}
       propertyPath: m_FlipY
@@ -467,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: a60b120e8c907ec47a5534a1ad1d8d63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3533335
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: a60b120e8c907ec47a5534a1ad1d8d63, type: 3}
       propertyPath: m_LocalPosition.z

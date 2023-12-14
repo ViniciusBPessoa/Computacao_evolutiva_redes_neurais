@@ -9,7 +9,7 @@ public class PipeSpawner : MonoBehaviour
     public float minY = -8.35f; // Altura mínima de spawn em Y
     public float maxY = -3.96f; // Altura máxima de spawn em Y
 
-    private float timeSinceLastSpawn = 0f;
+    public float timeSinceLastSpawn = 0f;
 
     void Update()
     {
@@ -25,7 +25,7 @@ public class PipeSpawner : MonoBehaviour
         SpawnPipe();
     }
 
-    void SpawnPipe()
+    public void SpawnPipe()
     {
         GameObject pipePrefab = pipePrefabs[Random.Range(0, pipePrefabs.Length)]; // Seleciona aleatoriamente um prefab de cano da lista
         float randomY = Random.Range(minY, maxY); // Gera uma altura Y aleatória

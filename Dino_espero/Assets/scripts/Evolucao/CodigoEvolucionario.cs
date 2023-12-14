@@ -23,7 +23,6 @@ public class CodigoEvolucionario : MonoBehaviour
         if(verificador_fim())
         {
             termilar_episodio();
-            jogada = algoritimoEvolucionario.atualGeneration;
         }
     }
 
@@ -31,18 +30,28 @@ public class CodigoEvolucionario : MonoBehaviour
     public void inicial_spouwn()
     {
         Vector2 posicao = gameObject.transform.position;
+        float modificador = posicao.y;
         for (int i = 0; i < qtd_geration; i++)
         {
-            Instantiate(passaro, posicao, Quaternion.identity);
+            modificador += 0.01f;
+            Vector2 posicao2 = new Vector2(posicao.x, modificador);
+            Instantiate(passaro, posicao2, Quaternion.identity);
         }
     }
 
     public void iniciar_segunda()
     {
+        PipeSpawner spown = GameObject.FindGameObjectWithTag("Respawn").GetComponent<PipeSpawner>();
+        spown.timeSinceLastSpawn = 0f;
+        spown.SpawnPipe();
+
         Vector2 posicao = gameObject.transform.position;
+        float modificador = posicao.y;
         for (int i = 0; i < qtd_geration; i++)
         {
-            Instantiate(algoritimoEvolucionario.atualGeneration[i], posicao, Quaternion.identity);
+            modificador += 0.01f;
+            Vector2 posicao2 = new Vector2(posicao.x, modificador);
+            Instantiate(passaro, posicao2, Quaternion.identity);
         }
     }
 
@@ -66,7 +75,7 @@ public class CodigoEvolucionario : MonoBehaviour
     {
         GameObject[] jogadores = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] cactos = GameObject.FindGameObjectsWithTag("cactos");
-        algoritimoEvolucionario.generationCreator(jogadores.ToList());
+        // algoritimoEvolucionario.generationCreator(jogadores.ToList());
 
         foreach (GameObject item in jogadores)
         {

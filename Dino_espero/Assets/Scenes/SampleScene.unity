@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 14628006}
   m_Layer: 0
   m_Name: Spowner cactos
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   spawnRate: 2
   minY: -9.35
   maxY: -2.96
+  timeSinceLastSpawn: 0
 --- !u!4 &14628007
 Transform:
   m_ObjectHideFlags: 0
@@ -298,6 +299,7 @@ MonoBehaviour:
   selecionados: 10
   qtd_geration: 200
   passaro: {fileID: 8731455322549310603, guid: aa1b971498fe76b4b8e734af69dd81ae, type: 3}
+  jogada: []
 --- !u!4 &520603048
 Transform:
   m_ObjectHideFlags: 0

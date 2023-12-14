@@ -1,6 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BirdController : MonoBehaviour
@@ -14,7 +13,7 @@ public class BirdController : MonoBehaviour
     public int outputSize;
     [SerializeField] public int[] layerSizes;
     public float learningRate;
-
+    public double[] arreyEntrada;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +30,7 @@ public class BirdController : MonoBehaviour
 
         List<float> entrada = RecebeValores();
         entrada.Add(transform.position.y);
-        double[] arreyEntrada = entrada.ConvertAll(input => (double)input).ToArray();
+        arreyEntrada = entrada.ConvertAll(input => (double)input).ToArray();
 
         if (rede_neural.Predict(arreyEntrada)[0] == 1 && !isDead){
             Jump();
@@ -60,10 +59,9 @@ public class BirdController : MonoBehaviour
 
     public List<float> RecebeValores()
     {
-        GameObject[] cactosArray = GameObject.FindGameObjectsWithTag("cactos");
+        GameObject[] cactosArray = GameObject.FindGameObjectsWithTag("ponto");
 
         Vector2 currentPos = transform.position;
-        List<Vector2> distances = new List<Vector2>();
 
         float closestY = float.MaxValue;
         float closestXDistance = float.MaxValue;
@@ -73,14 +71,25 @@ public class BirdController : MonoBehaviour
             Vector2 cactoPos = cacto.transform.position;
             float distanceX = Mathf.Abs(cactoPos.x - currentPos.x);
 
-            if (distanceX < closestXDistance && distanceX > currentPos.x)
+            // Verifica se o cacto está à frente da posição atual (no eixo X) e se a distância é menor
+            if (cactoPos.x > currentPos.x && distanceX < closestXDistance)
             {
                 closestXDistance = distanceX;
                 closestY = cactoPos.y;
             }
         }
 
-        return new List<float> {closestXDistance, closestY};
+        // Verifica se foi encontrado um cacto próximo
+        if (closestXDistance != float.MaxValue)
+        {
+            return new List<float> { closestXDistance, closestY };
+        }
+        else
+        {
+            // Se nenhum cacto foi encontrado, retorna valores padrão ou mensagem de erro, conforme necessário.
+            Debug.LogError("Nenhum cacto encontrado à frente da posição atual.");
+            return new List<float> { 0f, 0f }; // Valores padrão
+        }
     }
 
 
